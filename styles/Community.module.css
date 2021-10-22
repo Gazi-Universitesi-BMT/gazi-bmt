@@ -1,17 +1,17 @@
-.home {
+.community {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: 10vh auto auto;
   grid-template-areas:
     ". . ."
-    ". hero ."
-    ". events .";
+    ". text ."
+    ". admin .";
 }
 
-.home__hero {
-  grid-area: hero;
+.community__text {
+  grid-area: text;
 }
 
-.home__events {
-  grid-area: events;
+.community__admin {
+  grid-area: admin;
 }

@@ -1,17 +1,17 @@
-.home {
+.events {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: 10vh auto auto;
   grid-template-areas:
     ". . ."
-    ". hero ."
-    ". events .";
+    ". upcoming ."
+    ". past .";
 }
 
-.home__hero {
-  grid-area: hero;
+.events__upcoming {
+  grid-area: upcoming;
 }
 
-.home__events {
-  grid-area: events;
+.events__past {
+  grid-area: past;
 }

@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 import classes from "./styles/container.module.css";
+import useWindowDimensions from "./useWindowDimensions";
 
 import Footer from "./Footer";
 import MobileMenu from "./MobileMenu";
@@ -27,9 +28,10 @@ export default function Container(props) {
     type: "website",
     ...customMeta,
   };
+  const { height, width } = useWindowDimensions();
 
   return (
-    <div>
+    <div className={classes.container}>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -43,21 +45,24 @@ export default function Container(props) {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
       </Head>
-      <div>
-        <nav>
-          <div>
+      <header className={classes.header}>
+        {width < 800 ? (
+          <nav className={classes.header__navmobile}>
             <MobileMenu />
-            <NavItem href="/" text="Home" />
+          </nav>
+        ) : (
+          <nav className={classes.header__navdesktop}>
+            <NavItem href="/" text="Ana Sayfa" />
             <NavItem href="/community" text="Topluluk" />
             <NavItem href="/events" text="Etkinlikler" />
             <NavItem href="/gallery" text="Galeri" />
-          </div>
-        </nav>
-      </div>
-      <main>
-        {children}
+          </nav>
+        )}
+      </header>
+      <main className={classes.main}>{children}</main>
+      <footer className={classes.footer}>
         <Footer />
-      </main>
+      </footer>
     </div>
   );
 }

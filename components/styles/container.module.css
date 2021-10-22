@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 13fr 1fr;
+  grid-template-rows: 12vh auto 20vh;
+  grid-template-areas:
+    ". header ."
+    ". main ."
+    ". footer .";
+  background: var(--primary);
+  color: var(--white);
+}
+
+.activeLink {
+  color: var(--blue);
+}
+
+.header {
+  grid-area: header;
+}
+
+.header__navdesktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.header__navdesktop a {
+  margin-right: 2rem;
+}
+.header__navdesktop a:last-child {
+  margin-right: 0rem;
+}
+
+.main {
+  grid-area: main;
+  min-height: 70vh;
+}
+
+.footer {
+  grid-area: footer;
+}
