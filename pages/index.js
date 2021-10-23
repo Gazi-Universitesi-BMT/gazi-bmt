@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <Container>
       <div className={classes.home}>
-        <section className={classes.home__hero}></section>
+        <section className={classes.home__hero}>
+          <h1>Gazi Üniversitesi Bilgisayar Mühendisliği Topluluğu</h1>
+        </section>
         <section className={classes.home__events}>
           <div className={classes.section__header}>
             <h2>Yaklaşan Etkinlikler</h2>

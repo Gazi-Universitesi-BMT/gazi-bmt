@@ -4,7 +4,7 @@
   grid-template-rows: 12vh auto 20vh;
   grid-template-areas:
     ". header ."
-    ". main ."
+    "main main main"
     ". footer .";
   background: var(--primary);
   color: var(--white);

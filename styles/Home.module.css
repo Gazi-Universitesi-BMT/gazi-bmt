@@ -4,12 +4,22 @@
   grid-template-rows: 10vh auto auto;
   grid-template-areas:
     ". . ."
-    ". hero ."
+    "hero hero hero"
     ". events .";
 }
 
 .home__hero {
   grid-area: hero;
+  background-image: url(../public/images/HERO.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4rem;
 }
 
 .home__events {
