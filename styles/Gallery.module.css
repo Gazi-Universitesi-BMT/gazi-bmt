@@ -10,3 +10,18 @@
 .gallery__photos {
   grid-area: gallery;
 }
+
+.gallery__gallery__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.gallery__gallery__list__image {
+  position: relative;
+  width: 250px;
+  height: 170px;
+  margin: 0.4rem;
+}

@@ -1,7 +1,9 @@
 import Container from "../components/Container.js";
 import classes from "../styles/Community.module.css";
+import AdminCard from "../components/AdminCard.js";
+import getConfig from "next/config";
 
-export default function Community() {
+export default function Community({ admins }) {
   return (
     <Container>
       <div className={classes.community}>
@@ -23,8 +25,25 @@ export default function Community() {
           <div className={classes.section__header}>
             <h2>Yönetim</h2>
           </div>
+          <ul className={classes.community__admin__list}>
+            {admins.map((admin) => (
+              <AdminCard key={admin._id} admin={admin} />
+            ))}
+          </ul>
         </section>
       </div>
     </Container>
   );
 }
+
+export const getStaticProps = async () => {
+  const { publicRuntimeConfig } = getConfig();
+  const res = await fetch(`${publicRuntimeConfig.GET_ADMINS}`);
+  const admins = await res.json();
+
+  return {
+    props: {
+      admins,
+    },
+  };
+};

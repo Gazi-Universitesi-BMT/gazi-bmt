@@ -15,3 +15,7 @@
 .community__admin {
   grid-area: admin;
 }
+
+.community__admin__list {
+  list-style: none;
+}

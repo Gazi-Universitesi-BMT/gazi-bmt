@@ -6,6 +6,9 @@
   --white-2: white;
   --blue: #0096ff;
   --secondary: #333333;
+
+  --red: #dc143c;
+  --green: #32cd32;
 }
 
 ::-webkit-scrollbar {

@@ -24,4 +24,9 @@
 
 .home__events {
   grid-area: events;
+  margin-top: 5rem;
+}
+
+.home__events__list {
+  list-style: none;
 }

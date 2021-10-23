@@ -1,10 +1,10 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 13fr 1fr;
-  grid-template-rows: 12vh auto 20vh;
+  grid-template-rows: 20vh auto 20vh;
   grid-template-areas:
-    ". header ."
-    "main main main"
+    "header header header"
+    ". main ."
     ". footer .";
   background: var(--primary);
   color: var(--white);
@@ -16,19 +16,49 @@
 
 .header {
   grid-area: header;
+  border-bottom: 3px solid var(--blue);
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+  width: 100%;
+  height: 4px;
+  background: var(--white);
 }
 
 .header__navdesktop {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100%;
 }
-.header__navdesktop a {
+
+.header__navdesktop__logo {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.header__navdesktop__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__navdesktop__nav li {
   margin-right: 2rem;
 }
-.header__navdesktop a:last-child {
+.header__navdesktop__nav li:last-child {
   margin-right: 0rem;
+}
+
+.header__navdesktop__nav li:hover {
+  cursor: pointer;
 }
 
 .main {

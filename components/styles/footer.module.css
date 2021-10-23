@@ -1,0 +1,26 @@
+.footer {
+  margin-top: 4rem;
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li {
+  margin: 0.4rem;
+}
+.social li a {
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+}
+
+.social li a:hover {
+  cursor: pointer;
+  color: var(--blue);
+  transition: all 0.3s ease;
+}

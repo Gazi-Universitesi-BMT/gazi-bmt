@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import NextLink from "next/link";
 import classes from "./styles/container.module.css";
 import useWindowDimensions from "./useWindowDimensions";
+import Image from "next/image";
 
 import Footer from "./Footer";
 import MobileMenu from "./MobileMenu";
@@ -52,10 +53,54 @@ export default function Container(props) {
           </nav>
         ) : (
           <nav className={classes.header__navdesktop}>
-            <NavItem href="/" text="Ana Sayfa" />
-            <NavItem href="/community" text="Topluluk" />
-            <NavItem href="/events" text="Etkinlikler" />
-            <NavItem href="/gallery" text="Galeri" />
+            <div className={classes.header__navdesktop__logo}>
+              <Image src="/icons/logo.png" layout="fill" objectFit="cover" />
+            </div>
+            <ul className={classes.header__navdesktop__nav}>
+              <li>
+                <NavItem href="/" text="Ana Sayfa" />
+              </li>
+              <li>
+                <NavItem href="/community" text="Topluluk" />
+              </li>
+              <li>
+                <NavItem href="/events" text="Etkinlikler" />
+              </li>
+              <li>
+                <NavItem href="/gallery" text="Galeri" />
+              </li>
+              <li>
+                <a>
+                  <Image
+                    src="/icons/insta.svg"
+                    alt="Instagram logo"
+                    width="25px"
+                    height="25px"
+                  />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <Image
+                    src="/icons/twitter.svg"
+                    alt="Twitter logo"
+                    width="25px"
+                    height="25px"
+                  />
+                </a>
+              </li>
+
+              <li>
+                <a>
+                  <Image
+                    src="/icons/discord.svg"
+                    alt="Discord logo"
+                    width="25px"
+                    height="25px"
+                  />
+                </a>
+              </li>
+            </ul>
           </nav>
         )}
       </header>
