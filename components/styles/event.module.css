@@ -1,32 +1,23 @@
 .event {
   line-height: 12px;
-  margin-top: 2rem;
   display: flex;
   align-items: center;
 }
 
 .happenedtrue {
-  height: 5rem;
+  height: 6rem;
   display: flex;
   align-items: center;
-  width: 5px;
+  width: 4px;
   background-color: var(--red);
   margin: 1rem;
 }
 
 .happenedfalse {
-  height: 5rem;
+  height: 6rem;
   margin: 1rem;
   display: flex;
   align-items: center;
-  width: 5px;
+  width: 4px;
   background-color: var(--green);
-}
-
-.event__info h2 {
-  font-size: 1.2rem;
-}
-
-.event__info p {
-  font-size: 0.9rem;
 }

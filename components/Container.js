@@ -54,7 +54,7 @@ export default function Container(props) {
         ) : (
           <nav className={classes.header__navdesktop}>
             <div className={classes.header__navdesktop__logo}>
-              <Image src="/icons/logo.png" layout="fill" objectFit="cover" />
+              <Image src="/icons/logo.svg" layout="fill" objectFit="cover" />
             </div>
             <ul className={classes.header__navdesktop__nav}>
               <li>

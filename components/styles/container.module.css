@@ -52,13 +52,17 @@
 
 .header__navdesktop__nav li {
   margin-right: 2rem;
+  transition: all 0.3s ease;
 }
+
 .header__navdesktop__nav li:last-child {
   margin-right: 0rem;
 }
 
 .header__navdesktop__nav li:hover {
   cursor: pointer;
+  color: var(--blue);
+  transition: all 0.3s ease;
 }
 
 .main {

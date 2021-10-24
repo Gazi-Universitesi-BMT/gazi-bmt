@@ -10,6 +10,9 @@
 
 .community__text {
   grid-area: text;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .community__admin {
@@ -17,5 +20,28 @@
 }
 
 .community__admin__list {
+  padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .community {
+    grid-template-columns: 1fr 9fr 1fr;
+  }
+  .community__text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .community {
+    grid-template-columns: 1fr 14fr 1fr;
+  }
+  .community__text {
+    font-size: 0.6rem;
+  }
 }

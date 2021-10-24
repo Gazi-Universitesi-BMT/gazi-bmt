@@ -16,23 +16,10 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-  background: var(--white);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary);
-}
 
 html,
 body {
@@ -49,4 +36,26 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.1rem;
+}
+p {
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 0.8rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
 }

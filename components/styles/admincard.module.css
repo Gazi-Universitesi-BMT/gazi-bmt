@@ -30,3 +30,13 @@
   bottom: 2%;
   transition: all 0.4s ease;
 }
+
+@media (max-width: 800px) {
+  .admincard {
+    width: 220px;
+    height: 300px;
+  }
+  .admincard__info h2 {
+    font-size: 1rem;
+  }
+}
