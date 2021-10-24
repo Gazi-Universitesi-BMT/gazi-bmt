@@ -2,6 +2,7 @@ import Link from "next/link";
 import useDelayedRender from "use-delayed-render";
 import { useState, useEffect } from "react";
 import classes from "./styles/container.module.css";
+import Image from "next/image";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function MobileMenu() {
     isMenuOpen,
     {
       enterDelay: 20,
-      exitDelay: 300,
+      exitDelay: 20,
     }
   );
 
@@ -31,58 +32,79 @@ export default function MobileMenu() {
 
   return (
     <>
-      <button aria-label="Toggle menu" type="button" onClick={toggleMenu}>
+      <button
+        className={classes.mobile__toggle}
+        aria-label="Toggle menu"
+        type="button"
+        onClick={toggleMenu}
+      >
         <MenuIcon data-hide={isMenuOpen} />
-        <CrossIcon data-hide={!isMenuOpen} />
       </button>
       {isMenuMounted && (
-        <ul>
-          <li style={{ transitionDelay: "150ms" }}>
+        <ul className={classes.navmobile__list}>
+          <li>
             <Link href="/">
               <a>Home</a>
             </Link>
           </li>
-          <li style={{ transitionDelay: "175ms" }}>
+          <li>
             <Link href="/community">
               <a>Topluluk</a>
             </Link>
           </li>
-          <li style={{ transitionDelay: "200ms" }}>
+          <li>
             <Link href="/events">
               <a>Etkinlikler</a>
             </Link>
           </li>
-          <li style={{ transitionDelay: "250ms" }}>
+          <li>
             <Link href="/gallery">
-              <a>Gallery</a>
+              <a>Galeri</a>
             </Link>
+          </li>
+          <li>
+            <a>
+              <Image
+                src="/icons/insta.svg"
+                alt="Instagram logo"
+                width="25px"
+                height="25px"
+              />
+            </a>
+          </li>
+          <li>
+            <a>
+              <Image
+                src="/icons/twitter.svg"
+                alt="Twitter logo"
+                width="25px"
+                height="25px"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a>
+              <Image
+                src="/icons/discord.svg"
+                alt="Discord logo"
+                width="25px"
+                height="25px"
+              />
+            </a>
           </li>
         </ul>
       )}
     </>
   );
 }
-function CrossIcon() {
-  return <div></div>;
-}
 
-function MenuIcon(props) {
+function MenuIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
-      <path
-        d="M2.5 7.5H17.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M2.5 12.5H17.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <div className={classes.mobilenavicon}>
+      <div className={classes.mobilenavicon__line}></div>
+      <div className={classes.mobilenavicon__line}></div>
+      <div className={classes.mobilenavicon__line}></div>
+    </div>
   );
 }
