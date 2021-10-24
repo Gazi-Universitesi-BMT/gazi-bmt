@@ -3,23 +3,26 @@
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: 10vh auto auto;
   grid-template-areas:
-    ". . ."
+    "hero hero hero"
     "hero hero hero"
     ". events .";
 }
 
 .home__hero {
+  font-family: "Press Start 2P", cursive;
   grid-area: hero;
   background-image: url(../public/images/HERO.svg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 45vh;
+  min-height: 55vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-left: 4rem;
+  font-size: 1rem;
 }
 
 .home__events {

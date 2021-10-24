@@ -8,7 +8,8 @@ export default function Home({ events }) {
     <Container>
       <div className={classes.home}>
         <section className={classes.home__hero}>
-          <h1>Gazi Üniversitesi Bilgisayar Mühendisliği Topluluğu</h1>
+          <h1>Gazi Üniversitesi</h1>
+          <p>Bilgisayar Mühendisliği Topluluğu</p>
         </section>
         {events.filter((el) => el.happened === false).length && (
           <section className={classes.home__events}>
