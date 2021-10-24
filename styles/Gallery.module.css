@@ -12,6 +12,7 @@
 }
 
 .gallery__gallery__list {
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -24,4 +25,16 @@
   width: 250px;
   height: 170px;
   margin: 0.4rem;
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: 1fr 9fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: 1fr 14fr 1fr;
+  }
 }

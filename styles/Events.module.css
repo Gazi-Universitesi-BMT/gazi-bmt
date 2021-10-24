@@ -11,7 +11,25 @@
 .events__upcoming {
   grid-area: upcoming;
 }
+.events__upcoming__list {
+  padding: 0;
+}
 
 .events__past {
   grid-area: past;
+}
+.events__past__list {
+  padding: 0;
+}
+
+@media (max-width: 800px) {
+  .events {
+    grid-template-columns: 1fr 9fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .events {
+    grid-template-columns: 1fr 14fr 1fr;
+  }
 }
