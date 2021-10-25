@@ -6,6 +6,31 @@ import fs from "fs";
 import Image from "next/image";
 
 export default function Gallery({ fileNames }) {
+  const [index, setIndex] = useState(0);
+
+  /* 
+  useEffect(() => {
+    setInterval(() => {
+      rightHandler();
+    }, 6000);
+  }, []);
+  */
+  const leftHandler = () => {
+    if (index === 0) {
+      setIndex(0);
+    } else {
+      setIndex(index - 1);
+    }
+  };
+
+  const rightHandler = () => {
+    if (index === fileNames.length - 1) {
+      setIndex(fileNames.length - 1);
+    } else {
+      setIndex(index + 1);
+    }
+  };
+
   return (
     <Container>
       <div className={classes.gallery}>
@@ -15,7 +40,23 @@ export default function Gallery({ fileNames }) {
           </div>
 
           <div className={classes.gallery__gallery}>
-            <div className={classes.gallery__gallery__main}></div>
+            <div className={classes.gallery__gallery__main}>
+              <Image
+                alt={fileNames[index]}
+                src={`/images/gallery/${fileNames[index]}`}
+                layout="fill"
+                objectFit="cover"
+              />
+              <button
+                onClick={leftHandler}
+                className={classes.lefthandler}
+              ></button>
+              <button
+                onClick={rightHandler}
+                className={classes.righthandler}
+              ></button>
+            </div>
+            {/* }
             <ul className={classes.gallery__gallery__list}>
               {fileNames.map((file) => (
                 <li
@@ -31,6 +72,7 @@ export default function Gallery({ fileNames }) {
                 </li>
               ))}
             </ul>
+            {*/}
           </div>
         </section>
       </div>
