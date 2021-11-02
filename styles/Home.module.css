@@ -11,13 +11,8 @@
 .home__hero {
   font-family: "Press Start 2P", cursive;
   grid-area: hero;
-  background-image: url(../public/images/hero100trans-01.svg);
-  background-size: contain;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position-y: 150px;
   width: 100%;
-  min-height: 55vh;
+  min-height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

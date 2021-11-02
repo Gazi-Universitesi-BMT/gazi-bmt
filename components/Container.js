@@ -4,7 +4,8 @@ import NextLink from "next/link";
 import classes from "./styles/container.module.css";
 import useWindowDimensions from "./useWindowDimensions";
 import Image from "next/image";
-
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import MobileMenu from "./MobileMenu";
 
@@ -30,6 +31,12 @@ export default function Container(props) {
     ...customMeta,
   };
   const { height, width } = useWindowDimensions();
+
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  // After mounting, we have access to the theme
+  useEffect(() => setMounted(true), []);
 
   return (
     <div className={classes.container}>
@@ -101,6 +108,23 @@ export default function Container(props) {
                 </a>
               </li>
             </ul>
+
+            <div
+              className={classes.changeTheme}
+              onClick={() =>
+                setTheme(resolvedTheme === "dark" ? "light" : "dark")
+              }
+            >
+              {resolvedTheme === "dark" ? (
+                <Image layout="fill" objectFit="contain" src="/icons/sun.png" />
+              ) : (
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/icons/moon.png"
+                />
+              )}
+            </div>
           </nav>
         )}
       </header>

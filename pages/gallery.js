@@ -7,30 +7,11 @@ import Image from "next/image";
 
 export default function Gallery({ fileNames }) {
   const [index, setIndex] = useState(0);
+  const [mainImage, setMainImage] = useState(fileNames[0]);
 
-  /* 
-  useEffect(() => {
-    setInterval(() => {
-      rightHandler();
-    }, 6000);
-  }, []);
-  */
-  const leftHandler = () => {
-    if (index === 0) {
-      setIndex(0);
-    } else {
-      setIndex(index - 1);
-    }
+  const handleChangeImage = (e) => {
+    setMainImage(e.target.alt);
   };
-
-  const rightHandler = () => {
-    if (index === fileNames.length - 1) {
-      setIndex(fileNames.length - 1);
-    } else {
-      setIndex(index + 1);
-    }
-  };
-
   return (
     <Container>
       <div className={classes.gallery}>
@@ -42,25 +23,17 @@ export default function Gallery({ fileNames }) {
           <div className={classes.gallery__gallery}>
             <div className={classes.gallery__gallery__main}>
               <Image
-                alt={fileNames[index]}
-                src={`/images/gallery/${fileNames[index]}`}
+                alt={mainImage}
+                src={`/images/gallery/${mainImage}`}
                 layout="fill"
                 objectFit="cover"
               />
-              <button
-                onClick={leftHandler}
-                className={classes.lefthandler}
-              ></button>
-              <button
-                onClick={rightHandler}
-                className={classes.righthandler}
-              ></button>
             </div>
-            {/* }
             <ul className={classes.gallery__gallery__list}>
               {fileNames.map((file) => (
                 <li
                   key={file}
+                  onClick={handleChangeImage}
                   className={classes.gallery__gallery__list__image}
                 >
                   <Image
@@ -72,7 +45,6 @@ export default function Gallery({ fileNames }) {
                 </li>
               ))}
             </ul>
-            {*/}
           </div>
         </section>
       </div>
