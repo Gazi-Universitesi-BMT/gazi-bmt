@@ -18,6 +18,7 @@
   right: 4%;
   transition: all 0.4s ease;
   text-align: right;
+  color: var(--white);
 }
 
 .admincard:hover {
