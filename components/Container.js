@@ -65,16 +65,16 @@ export default function Container(props) {
             </div>
             <ul className={classes.header__navdesktop__nav}>
               <li>
-                <NavItem href="/" text="Ana Sayfa" />
+                <NavItem href="#" text="Ana Sayfa" />
               </li>
               <li>
-                <NavItem href="/community" text="Topluluk" />
+                <NavItem href="#community" text="Topluluk" />
               </li>
               <li>
-                <NavItem href="/events" text="Etkinlikler" />
+                <NavItem href="#events" text="Etkinlikler" />
               </li>
               <li>
-                <NavItem href="/gallery" text="Galeri" />
+                <NavItem href="#gallery" text="Galeri" />
               </li>
               <li>
                 <a>

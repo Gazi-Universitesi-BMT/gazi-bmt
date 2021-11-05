@@ -1,17 +1,24 @@
-.home {
-  display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
-  grid-template-rows: 10vh auto auto;
-  grid-template-areas:
-    "hero hero hero"
-    "hero hero hero"
-    ". events .";
+.home section {
+  min-height: 60vh;
 }
 
-.home__hero {
-  font-family: "Press Start 2P", cursive;
-  grid-area: hero;
-  width: 100%;
+.section__header {
+  font-size: 1.3rem;
+  padding: 1.3rem 0rem;
+}
+
+.hero {
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: "Press Start 2P";
+}
+
+.gallery {
+  grid-area: gallery;
   min-height: 35vh;
   display: flex;
   flex-direction: column;
@@ -20,12 +27,41 @@
   font-size: 1rem;
 }
 
-.home__events {
-  grid-area: events;
-  margin-top: 5rem;
+.gallery__main {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+}
+.gallery__main img {
+  border-radius: 12px;
 }
 
-.home__events__list {
+.gallery__others {
+  padding: 2rem;
+}
+.gallery__others__list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery__others__list li {
+  position: relative;
+  width: 250px;
+  height: 120px;
+}
+
+.events {
+  grid-area: events;
+  margin-top: 5rem;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.events__list {
   list-style: none;
   padding: 0;
   display: flex;
@@ -34,24 +70,39 @@
   align-items: center;
 }
 
+.community {
+  grid-area: community;
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.community__text {
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.community__admin {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media (max-width: 800px) {
-  .home__hero {
+  .hero {
     font-size: 0.8rem;
   }
-  .home__events {
+  .events {
     margin-top: 0rem;
-  }
-  .home {
-    grid-template-columns: 1fr 9fr 1fr;
   }
 }
 
 @media (max-width: 400px) {
-  .home__hero {
+  .hero {
     font-size: 0.5rem;
     max-height: 20vh;
-  }
-  .home {
-    grid-template-columns: 1fr 14fr 1fr;
   }
 }
