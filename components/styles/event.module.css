@@ -2,9 +2,16 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--background);
-  border: 1px solid var(--text);
   padding: 1.5rem;
+  background: var(--flavor);
+  background: linear-gradient(
+    90deg,
+    var(--flavor2) 0%,
+    var(--flavor3) 36%,
+    var(--flavor4) 100%
+  );
+
+  color: var(--text);
 }
 
 .event__info h2 {

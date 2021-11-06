@@ -4,14 +4,10 @@
   grid-template-rows: 20vh auto 20vh;
   grid-template-areas:
     "header header header"
-    ". main ."
+    "main main main"
     ". footer .";
   background: var(--background);
   color: var(--text);
-}
-
-.activeLink {
-  color: var(--blue);
 }
 
 .header {
@@ -137,25 +133,33 @@
 
 .socialheader {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   list-style: none;
 }
 
 .socialheader li {
   margin: 0rem 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.4rem;
 }
 
 .changeTheme {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* OTHERS */
 
 .main {
   grid-area: main;
-  min-height: 70vh;
 }
 
 .footer {

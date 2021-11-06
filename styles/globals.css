@@ -13,12 +13,15 @@
 
   --background: #040418;
   --background-2: #1e1e1e;
-  --white: #efefef;
 
-  --text: #efefef;
+  --flavor: rgb(2, 0, 36);
+  --flavor2: rgba(2, 0, 36, 1);
+  --flavor3: rgba(20, 20, 65, 1);
+  --flavor4: rgba(0, 0, 0, 1);
 
   --blue: #0096ff;
-
+  --text: #efefef;
+  --white: #efefef;
   --red: #dc143c;
   --green: #32cd32;
 }
@@ -35,10 +38,14 @@
   --background: #efefef;
   --background-2: #fafafa;
 
-  --text: #040418;
-  --blue: #0096ff;
-  --white: #efefef;
+  --flavor: rgb(229, 229, 229);
+  --flavor2: rgba(229, 229, 229, 1);
+  --flavor3: rgba(255, 255, 255, 1);
+  --flavor4: rgba(229, 229, 229, 1);
 
+  --blue: #0096ff;
+  --text: #040418;
+  --white: #efefef;
   --red: #dc143c;
   --green: #32cd32;
 }
@@ -51,6 +58,7 @@ body {
   padding: 0;
   margin: 0;
   letter-spacing: -0.5px;
+  scroll-behavior: smooth;
 }
 
 a {

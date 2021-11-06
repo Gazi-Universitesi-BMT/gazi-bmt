@@ -79,17 +79,16 @@ export default function Home({ events, admins, fileNames }) {
               imperdiet mauris.
             </p>
           </div>
-
-          <div className={classes.community__admin}>
-            <div className={classes.section__header}>
-              <h2>Yönetim</h2>
-            </div>
-            <ul className={classes.community__admin__list}>
-              {admins.map((admin) => (
-                <AdminCard key={admin._id} admin={admin} />
-              ))}
-            </ul>
+        </section>
+        <section className={classes.admins}>
+          <div className={classes.section__header}>
+            <h2>Yönetim</h2>
           </div>
+          <ul className={classes.admins__list}>
+            {admins.map((admin) => (
+              <AdminCard key={admin._id} admin={admin} />
+            ))}
+          </ul>
         </section>
       </div>
     </Container>
