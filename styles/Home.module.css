@@ -1,18 +1,19 @@
 .home {
   display: grid;
   grid-template-columns: 1fr 12fr 1fr;
-  grid-template-rows: 10vh auto auto auto auto auto;
+  grid-template-rows: 3vh auto auto auto auto auto auto;
   grid-template-areas:
     ". . ."
-    ". hero ."
+    "hero hero hero"
     ". gallery ."
     ". events ."
+    "building building building"
     ". community ."
     ". admins .";
 }
 
 .home section {
-  min-height: 50vh;
+  min-height: 45vh;
   margin-top: 6rem;
 }
 
@@ -23,13 +24,18 @@
 
 .hero {
   grid-area: hero;
-  min-height: 35vh;
+  min-height: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   font-family: "Press Start 2P";
+  background: url(../public/images/gazilogo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-attachment: fixed;
 }
 
 .gallery {
@@ -88,6 +94,14 @@
   align-items: center;
 }
 
+.building {
+  grid-area: building;
+  width: 100%;
+  position: relative;
+  min-height: 35vh;
+  padding: 2rem;
+}
+
 .community {
   grid-area: community;
   display: flex;
@@ -116,6 +130,7 @@
       "hero hero hero"
       "gallery gallery gallery"
       "events events events"
+      "building building building"
       "community community community"
       "admins admins admins";
   }

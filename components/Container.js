@@ -68,13 +68,13 @@ export default function Container(props) {
                 <NavItem href="#" text="Ana Sayfa" />
               </li>
               <li>
-                <NavItem href="#community" text="Topluluk" />
+                <NavItem href="#gallery" text="Galeri" />
               </li>
               <li>
                 <NavItem href="#events" text="Etkinlikler" />
               </li>
               <li>
-                <NavItem href="#gallery" text="Galeri" />
+                <NavItem href="#community" text="Topluluk" />
               </li>
             </ul>
 

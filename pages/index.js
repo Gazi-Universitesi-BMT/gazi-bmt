@@ -64,6 +64,15 @@ export default function Home({ events, admins, fileNames }) {
           </section>
         )}
 
+        <section className={classes.building}>
+          <Image
+            src="/images/strokd.svg"
+            layout="fill"
+            objectFit="contain"
+            alt="building of gazi university"
+          />
+        </section>
+
         <section id="community" className={classes.community}>
           <div className={classes.section__header}>
             <h2>Topluluk Hakkında</h2>
