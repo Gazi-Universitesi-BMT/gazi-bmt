@@ -24,20 +24,11 @@
   display: flex;
   align-items: center;
   backdrop-filter: blur(3px);
+  font-size: 1.1rem;
 }
 
-/*
-.header::after {
-  content: "";
-  position: absolute;
-  bottom: 0rem;
-  left: 0rem;
-  width: 100%;
-  height: 4px;
-  background: var(--text);
-}
+/* HEADER FOR DESKTOP */
 
-*/
 .header__navdesktop {
   display: flex;
   justify-content: space-around;
@@ -81,6 +72,77 @@
   height: 100%;
   flex-direction: column;
   position: relative;
+  width: 100%;
+}
+
+/* MOBILE NAV CONFIGURATIONNS */
+
+.mobilenavicon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.8rem;
+}
+.mobilenavicon__line {
+  height: 5px;
+  margin: 0.2rem 0rem;
+  background: var(--text);
+  width: 45px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.mobile__toggle {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.navmobile__wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.navmobile__wrapper__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(4px);
+  top: 10%;
+}
+.navmobile__wrapper__foreground {
+  width: 100%;
+  z-index: 999;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+  z-index: 999;
+}
+.navmobile__wrapper__foreground li {
+  padding: 2rem 0rem;
+}
+
+.socialandtheme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 15rem;
+}
+
+.socialheader {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+.socialheader li {
+  margin: 0rem 0.7rem;
 }
 
 .changeTheme {
@@ -89,41 +151,7 @@
   height: 42px;
 }
 
-.navmobile__list {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  background-color: var(--background);
-  z-index: 999;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding-top: 2rem;
-}
-.navmobile__list li {
-  padding: 2rem 0rem;
-}
-
-.mobilenavicon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.mobilenavicon__line {
-  height: 2.5px;
-  margin: 0.2rem 0rem;
-  background: var(--text);
-  width: 35px;
-}
-.mobile__toggle {
-  background: transparent;
-  border: none;
-  outline: none;
-}
+/* OTHERS */
 
 .main {
   grid-area: main;

@@ -76,54 +76,62 @@ export default function Container(props) {
               <li>
                 <NavItem href="#gallery" text="Galeri" />
               </li>
-              <li>
-                <a>
-                  <Image
-                    src="/icons/insta.svg"
-                    alt="Instagram logo"
-                    width="25px"
-                    height="25px"
-                  />
-                </a>
-              </li>
-              <li>
-                <a>
-                  <Image
-                    src="/icons/twitter.svg"
-                    alt="Twitter logo"
-                    width="25px"
-                    height="25px"
-                  />
-                </a>
-              </li>
-
-              <li>
-                <a>
-                  <Image
-                    src="/icons/discord.svg"
-                    alt="Discord logo"
-                    width="25px"
-                    height="25px"
-                  />
-                </a>
-              </li>
             </ul>
 
-            <div
-              className={classes.changeTheme}
-              onClick={() =>
-                setTheme(resolvedTheme === "dark" ? "light" : "dark")
-              }
-            >
-              {resolvedTheme === "dark" ? (
-                <Image layout="fill" objectFit="contain" src="/icons/sun.png" />
-              ) : (
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src="/icons/moon.png"
-                />
-              )}
+            <div className={classes.socialandtheme}>
+              <ul className={classes.socialheader}>
+                <li>
+                  <a>
+                    <Image
+                      src="/icons/insta.svg"
+                      alt="Instagram logo"
+                      width="25px"
+                      height="25px"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <Image
+                      src="/icons/twitter.svg"
+                      alt="Twitter logo"
+                      width="25px"
+                      height="25px"
+                    />
+                  </a>
+                </li>
+
+                <li>
+                  <a>
+                    <Image
+                      src="/icons/discord.svg"
+                      alt="Discord logo"
+                      width="25px"
+                      height="25px"
+                    />
+                  </a>
+                </li>
+              </ul>
+              <div
+                className={classes.changeTheme}
+                onClick={() =>
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                }
+              >
+                {resolvedTheme === "dark" ? (
+                  <Image
+                    layout="fill"
+                    objectFit="contain"
+                    src="/icons/sun.png"
+                  />
+                ) : (
+                  <Image
+                    layout="fill"
+                    objectFit="contain"
+                    src="/icons/moon.png"
+                  />
+                )}
+              </div>
             </div>
           </nav>
         )}
