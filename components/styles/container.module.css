@@ -78,13 +78,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 3.8rem;
+  margin-top: 1rem;
 }
 .mobilenavicon__line {
-  height: 5px;
+  height: 4px;
   margin: 0.2rem 0rem;
   background: var(--text);
-  width: 45px;
+  width: 35px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
@@ -122,6 +122,9 @@
 }
 .navmobile__wrapper__foreground li {
   padding: 2rem 0rem;
+}
+.navmobile__wrapper__foreground li a {
+  margin: 0rem 0.7rem;
 }
 
 .socialandtheme {

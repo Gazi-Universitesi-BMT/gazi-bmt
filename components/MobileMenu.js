@@ -76,8 +76,6 @@ export default function MobileMenu() {
                   height="25px"
                 />
               </a>
-            </li>
-            <li>
               <a>
                 <Image
                   src="/icons/twitter.svg"
@@ -86,9 +84,6 @@ export default function MobileMenu() {
                   height="25px"
                 />
               </a>
-            </li>
-
-            <li>
               <a>
                 <Image
                   src="/icons/discord.svg"
