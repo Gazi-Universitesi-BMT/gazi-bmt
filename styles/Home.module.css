@@ -140,6 +140,10 @@
   .events {
     margin-top: 0rem;
   }
+
+  .community p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 400px) {

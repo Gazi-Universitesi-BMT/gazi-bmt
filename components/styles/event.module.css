@@ -21,3 +21,12 @@
 .event__info p {
   font-size: 1.1rem;
 }
+
+@media (max-width: 800px) {
+  .event__info h2 {
+    font-size: 1rem;
+  }
+  .event__info p {
+    font-size: 0.9rem;
+  }
+}

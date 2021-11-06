@@ -53,18 +53,18 @@ export default function MobileMenu() {
               </Link>
             </li>
             <li>
-              <Link href="/community">
-                <a>Topluluk</a>
+              <Link href="#gallery">
+                <a>Galeri</a>
               </Link>
             </li>
             <li>
-              <Link href="/events">
+              <Link href="#events">
                 <a>Etkinlikler</a>
               </Link>
             </li>
             <li>
-              <Link href="/gallery">
-                <a>Galeri</a>
+              <Link href="#community">
+                <a>Topluluk</a>
               </Link>
             </li>
             <li>
