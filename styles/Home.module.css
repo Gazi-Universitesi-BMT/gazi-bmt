@@ -24,8 +24,9 @@
 
 .hero {
   grid-area: hero;
-  min-height: 25vh;
+  min-height: 20vh;
   display: flex;
+  padding: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -158,6 +159,18 @@
     width: 125px;
     height: 60px;
     margin: 0.5rem;
+  }
+
+  .hero {
+    grid-area: hero;
+    min-height: 15vh;
+    padding: 1rem;
+  }
+  .hero h1 {
+    font-size: 0.8rem;
+  }
+  .hero p {
+    font-size: 0.6rem;
   }
 }
 
