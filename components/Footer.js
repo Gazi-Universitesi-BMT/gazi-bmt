@@ -10,8 +10,8 @@ export default function Footer() {
             <Image
               src="/icons/insta.svg"
               alt="Instagram logo"
-              width="35px"
-              height="35px"
+              width="25px"
+              height="25px"
             />
           </a>
         </li>
@@ -20,8 +20,8 @@ export default function Footer() {
             <Image
               src="/icons/twitter.svg"
               alt="Twitter logo"
-              width="35px"
-              height="35px"
+              width="25px"
+              height="25px"
             />
           </a>
         </li>
@@ -31,8 +31,8 @@ export default function Footer() {
             <Image
               src="/icons/discord.svg"
               alt="Discord logo"
-              width="35px"
-              height="35px"
+              width="25px"
+              height="25px"
             />
           </a>
         </li>

@@ -40,7 +40,7 @@ export default function Home({ events, admins, fileNames }) {
                   <Image
                     src={`/images/gallery/${image}`}
                     layout="fill"
-                    objectFit="contain"
+                    objectFit="cover"
                     alt={image}
                   />
                 </li>

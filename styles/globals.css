@@ -26,10 +26,6 @@
   --green: #32cd32;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 [data-theme="light"] {
   --primary: #efefef;
   --secondary: #333333;

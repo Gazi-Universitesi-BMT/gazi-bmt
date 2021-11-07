@@ -40,7 +40,7 @@
 
 .gallery {
   grid-area: gallery;
-  padding: 2rem;
+  padding: 1rem;
   min-height: 35vh;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
 .gallery__main {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 40vh;
 }
 .gallery__main img {
   border-radius: 12px;
@@ -124,6 +124,13 @@
   justify-content: center;
 }
 
+.admins__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 800px) {
   .home {
     grid-template-areas:
@@ -140,10 +147,17 @@
   }
   .events {
     margin-top: 0rem;
+    padding: 1rem;
   }
 
   .community p {
     font-size: 0.9rem;
+  }
+
+  .gallery__others__list li {
+    width: 125px;
+    height: 60px;
+    margin: 0.5rem;
   }
 }
 
