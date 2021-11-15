@@ -12,19 +12,15 @@
     ". admins .";
 }
 
-.home section {
-  min-height: 45vh;
-  margin-top: 6rem;
-}
-
 .section__header h2 {
   font-size: 1.4rem;
   padding: 1.3rem 0rem;
 }
 
 .hero {
+  margin-top: 0rem;
   grid-area: hero;
-  min-height: 20vh;
+  min-height: 60vh;
   display: flex;
   padding: 1rem;
   flex-direction: column;
@@ -40,9 +36,10 @@
 }
 
 .gallery {
+  margin-top: 6rem;
+  min-height: 50vh;
   grid-area: gallery;
   padding: 1rem;
-  min-height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,8 +76,8 @@
 
 .events {
   grid-area: events;
-  margin-top: 5rem;
-  min-height: 40vh;
+  margin-top: 6rem;
+  min-height: 50vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -97,6 +94,8 @@
 }
 
 .building {
+  margin-top: 5rem;
+  min-height: 60vh;
   grid-area: building;
   width: 100%;
   position: relative;
@@ -105,6 +104,8 @@
 }
 
 .community {
+  margin-top: 5rem;
+  min-height: 60vh;
   grid-area: community;
   display: flex;
   justify-content: center;
@@ -117,8 +118,9 @@
 }
 
 .admins {
+  margin-top: 5rem;
+  min-height: 60vh;
   grid-area: admins;
-  min-height: 40vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;

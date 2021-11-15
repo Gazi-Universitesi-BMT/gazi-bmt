@@ -26,7 +26,8 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const meta = {
     title: "Bilgisayar Mühendisliği Topluluğu, Gazi Üniversitesi.",
-    description: `Etkinlikler ve mühendislik eğitimi üzerine.`,
+    description:
+      "Gazi Üniversitesi Bilgisayar Mühendisliği Topluluğu. Yapay zeka, oyun geliştirme, web geliştirme, gömülü sistemler.",
     type: "website",
     ...customMeta,
   };
@@ -50,8 +51,9 @@ export default function Container(props) {
           content="Gazi Üniversitesi Bilgisayar Mühendisliği Topluluğu"
         />
         <meta property="og:description" content={meta.description} />
+        {/* } <meta property="og:url" content="urlhere" /> {*/}
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={classes.header}>
         {width < 800 ? (
