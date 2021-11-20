@@ -5,15 +5,17 @@ import Event from "../components/Event.js";
 import AdminCard from "../components/AdminCard.js";
 import path from "path";
 import fs from "fs";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home({ events, admins, fileNames }) {
-  const [index, setIndex] = useState(0);
   const [mainImage, setMainImage] = useState(fileNames[0]);
 
+  const [email, setEmail] = useState("");
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleChangeImage = (e) => {
-    console.log(e);
     setMainImage(e.target.alt);
   };
 
@@ -98,6 +100,36 @@ export default function Home({ events, admins, fileNames }) {
               <AdminCard key={admin._id} admin={admin} />
             ))}
           </ul>
+        </section>
+        <section id="ask" className={classes.ask}>
+          <div className={classes.section__header}>
+            <h2>Bize Sor</h2>
+          </div>
+          <form>
+            <div id={classes.mess} className={classes.inputbox}>
+              <label>Mesaj</label>
+              <textarea
+                type="text"
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </div>
+
+            <div id={classes.emai} className={classes.inputbox}>
+              <label>
+                E-mail{" "}
+                <span className={classes.mail}>
+                  (Cevap mail olarak iletilecektir.)
+                </span>
+              </label>
+              <input type="text" onChange={(e) => setEmail(e.target.value)} />
+            </div>
+
+            <div id={classes.titl} className={classes.inputbox}>
+              <label>Konu</label>
+              <input type="text" onChange={(e) => setTitle(e.target.value)} />
+            </div>
+            <button>Gönder</button>
+          </form>
         </section>
       </div>
     </Container>

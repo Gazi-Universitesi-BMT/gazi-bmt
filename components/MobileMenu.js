@@ -68,6 +68,10 @@ export default function MobileMenu() {
               </Link>
             </li>
             <li>
+              <NavItem href="#ask" text="Bize Sor" />
+            </li>
+
+            <li>
               <a>
                 <Image
                   src="/icons/insta.svg"

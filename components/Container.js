@@ -78,6 +78,9 @@ export default function Container(props) {
               <li>
                 <NavItem href="#community" text="Topluluk" />
               </li>
+              <li>
+                <NavItem href="#ask" text="Bize Sor" />
+              </li>
             </ul>
 
             <div className={classes.socialandtheme}>
