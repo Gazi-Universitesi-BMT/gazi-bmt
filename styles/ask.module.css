@@ -1,0 +1,37 @@
+.ask {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-rows: 15vh 15vh auto;
+  grid-template-areas:
+    ". . ."
+    ". amo ."
+    ". quest .";
+}
+
+.questionamount {
+  grid-area: amo;
+  display: flex;
+  justify-content: center;
+}
+
+.questionamount p {
+  font-size: 1.4rem;
+}
+
+.askedquestions {
+  grid-area: quest;
+  list-style: none;
+  padding: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .ask {
+    grid-template-areas:
+      ". . ."
+      "amo amo amo"
+      "quest quest quest";
+  }
+}

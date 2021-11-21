@@ -1,11 +1,29 @@
 import Container from "../components/Container";
 import getConfig from "next/config";
+import AskedQuestion from "../components/AskedQuestion";
+import classes from "../styles/ask.module.css";
 
 export default function Ask({ messages }) {
-  console.log(messages);
   return (
     <Container>
-      <div></div>
+      <div className={classes.ask}>
+        <div className={classes.questionamount}>
+          <p>{messages.length} Mesaj.</p>
+        </div>
+        <ul className={classes.askedquestions}>
+          {messages.map((message) => {
+            return (
+              <li key={message.message}>
+                <AskedQuestion
+                  title={message.title}
+                  email={message.email}
+                  message={message.message}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </Container>
   );
 }

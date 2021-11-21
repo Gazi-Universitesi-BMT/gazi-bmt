@@ -1,0 +1,30 @@
+.askedquestion {
+  border: 2px solid var(--blue2);
+  padding: 1rem;
+  margin: 1rem 0rem;
+  width: 50vw;
+}
+
+.askedquestion__mail {
+  color: var(--blue);
+}
+
+.askedquestion a button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: var(--blue2);
+  color: var(--white);
+  border: none;
+  outline: none;
+}
+
+.askedquestion a button:hover {
+  cursor: pointer;
+  background: var(--blue);
+}
+
+@media (max-width: 1100px) {
+  .askedquestion {
+    width: 80vw;
+  }
+}

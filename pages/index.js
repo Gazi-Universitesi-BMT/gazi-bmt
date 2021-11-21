@@ -5,18 +5,73 @@ import Event from "../components/Event.js";
 import AdminCard from "../components/AdminCard.js";
 import path from "path";
 import fs from "fs";
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Home({ events, admins, fileNames }) {
   const [mainImage, setMainImage] = useState(fileNames[0]);
+  const { publicRuntimeConfig } = getConfig();
 
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
 
+  const recaptchaRef = React.createRef();
+
   const handleChangeImage = (e) => {
     setMainImage(e.target.alt);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    recaptchaRef.current.execute();
+  };
+
+  const onReCAPTCHAChange = async (captchaCode) => {
+    // If the reCAPTCHA code is null or undefined indicating that
+    // the reCAPTCHA was expired then return early
+    if (!captchaCode) {
+      return;
+    }
+    try {
+      const data = {
+        title: title,
+        email: email,
+        message: message,
+        captcha: captchaCode,
+      };
+      await fetch(`${publicRuntimeConfig.CREATE_MESSAGE}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (response.ok) {
+            // If the response is ok than show the success alert
+            alert("Mesaj gönderildi.");
+          } else {
+            // Else throw an error with the message returned
+            // from the API
+            const error = response.json();
+            throw new Error(error.message);
+          }
+        })
+        .then((res) => console.log(res))
+        .catch((err) => console.log("Errro!", err));
+    } catch (error) {
+      alert(error?.message || "Something went wrong");
+    } finally {
+      // Reset the reCAPTCHA when the request has failed or succeeeded
+      // so that it can be executed again if user submits another email.
+      recaptchaRef.current.reset();
+      setTitle("");
+      setEmail("");
+    }
   };
 
   return (
@@ -105,7 +160,14 @@ export default function Home({ events, admins, fileNames }) {
           <div className={classes.section__header}>
             <h2>Bize Sor</h2>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              size="invisible"
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              onChange={onReCAPTCHAChange}
+            />
+
             <div id={classes.mess} className={classes.inputbox}>
               <label>Mesaj</label>
               <textarea
@@ -128,7 +190,7 @@ export default function Home({ events, admins, fileNames }) {
               <label>Konu</label>
               <input type="text" onChange={(e) => setTitle(e.target.value)} />
             </div>
-            <button>Gönder</button>
+            <button type="submit">Gönder</button>
           </form>
         </section>
       </div>
