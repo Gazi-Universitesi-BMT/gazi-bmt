@@ -7,6 +7,7 @@ import path from "path";
 import fs from "fs";
 import React, { useState } from "react";
 import Image from "next/image";
+import { createMessage } from "../lib/message";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -31,16 +32,7 @@ export default function Home({ events, admins, fileNames }) {
         email: email,
         message: message,
       };
-      await fetch(`${publicRuntimeConfig.CREATE_MESSAGE}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((response) => response.json())
-        .then((res) => console.log(res))
-        .catch((err) => console.log("Errro!", err));
+      createMessage(data);
     } catch (error) {
       alert(error?.message || "Something went wrong");
     } finally {
