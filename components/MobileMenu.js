@@ -68,7 +68,9 @@ export default function MobileMenu() {
               </Link>
             </li>
             <li>
-              <NavItem href="#ask" text="Bize Sor" />
+              <Link href="#ask">
+                <a>Bize Sor</a>
+              </Link>
             </li>
 
             <li>

@@ -19,6 +19,7 @@ export default function AskedQuestion({ title, email, message }) {
           <p>{message}</p>
           <a
             target="_blank"
+            rel="noreferrer"
             href={`mailto:${email}?subject=Gazi Üniversitesi Bilgisayar Mühendisliği Topluluğu`}
           >
             <button>Cevapla</button>
