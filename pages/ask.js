@@ -37,5 +37,6 @@ export const getStaticProps = async () => {
     props: {
       messages,
     },
+    revalidate: 60,
   };
 };
