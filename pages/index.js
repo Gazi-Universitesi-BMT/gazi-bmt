@@ -19,6 +19,14 @@ export default function Home({ events, admins, fileNames }) {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
 
   const handleChangeImage = (e) => {
     setMainImage(e.target.alt);
@@ -26,29 +34,41 @@ export default function Home({ events, admins, fileNames }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     try {
-      const data = {
-        title: title,
-        email: email,
-        message: message,
-      };
-      createMessage(data);
+      if (title === "") {
+        setError("Konu kısmı boş olamaz.");
+      } else if (!validateEmail(email)) {
+        setError("Lütfen geçerli bir e-mail adresi giriniz.");
+      } else if (message.split(" ").length < 10) {
+        setError("Mesajınız iletilmedi.");
+      } else {
+        const data = {
+          title: title,
+          email: email,
+          message: message,
+        };
+        createMessage(data);
+        setSuccess(true);
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      }
     } catch (error) {
       alert(error?.message || "Something went wrong");
     } finally {
-      setTitle("");
-      setEmail("");
     }
   };
 
   const onReCAPTCHAChange = () => {
-    setDisabled(false);
+    setDisabled(!disabled);
   };
 
   return (
     <Container>
       <div className={classes.home}>
-        <section className={classes.hero}>
+        <section className={classes.hero}></section>
+        <section className={classes.herotext}>
           <h1>Gazi Üniversitesi</h1>
           <p>Bilgisayar Mühendisliği Topluluğu</p>
         </section>
@@ -132,12 +152,14 @@ export default function Home({ events, admins, fileNames }) {
             <h2>Bize Sor</h2>
           </div>
           <form onSubmit={handleSubmit}>
-            <ReCAPTCHA
-              sitekey="6Lelr00dAAAAABsGdIrh6bkyhPnMoYibu0r6SRBt"
-              onChange={onReCAPTCHAChange}
-            />
+            <div id={classes.captcha}>
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={onReCAPTCHAChange}
+              />
+            </div>
 
-            <div id={classes.mess} className={classes.inputbox}>
+            <div tabIndex="0" id={classes.mess} className={classes.inputbox}>
               <label>Mesaj</label>
               <textarea
                 type="text"
@@ -145,17 +167,17 @@ export default function Home({ events, admins, fileNames }) {
               />
             </div>
 
-            <div id={classes.emai} className={classes.inputbox}>
+            <div tabIndex="1" id={classes.emai} className={classes.inputbox}>
               <label>
                 E-mail{" "}
                 <span className={classes.mail}>
                   (Cevap mail olarak iletilecektir.)
                 </span>
               </label>
-              <input type="text" onChange={(e) => setEmail(e.target.value)} />
+              <input type="email" onChange={(e) => setEmail(e.target.value)} />
             </div>
 
-            <div id={classes.titl} className={classes.inputbox}>
+            <div tabIndex="2" id={classes.titl} className={classes.inputbox}>
               <label>Konu</label>
               <input type="text" onChange={(e) => setTitle(e.target.value)} />
             </div>
@@ -163,6 +185,20 @@ export default function Home({ events, admins, fileNames }) {
               Gönder
             </button>
           </form>
+          {success ? (
+            <div className={classes.formsuccess}>
+              <p>Mesajınız başarıyla iletildi.</p>
+            </div>
+          ) : (
+            ""
+          )}
+          {error ? (
+            <div className={classes.formerror}>
+              <p>{error}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </section>
       </div>
     </Container>
