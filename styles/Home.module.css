@@ -286,8 +286,7 @@
 @media (max-width: 800px) {
   .home {
     grid-template-areas:
-      ". . ."
-      "hero hero hero"
+      "herotext herotext herotext"
       "gallery gallery gallery"
       "events events events"
       "building building building"

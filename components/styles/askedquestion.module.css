@@ -9,18 +9,32 @@
   color: var(--blue);
 }
 
-.askedquestion a button {
-  font-size: 1rem;
-  padding: 0.5rem;
-  background: var(--blue2);
-  color: var(--white);
-  border: none;
-  outline: none;
+.askedquestion__buttons {
+  display: flex;
+  align-items: center;
 }
 
-.askedquestion a button:hover {
-  cursor: pointer;
+.askedquestion__buttons button {
+  margin: 0rem 0.5rem;
+}
+
+.askedquestion__buttons__answer {
+  background: var(--blue2);
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+
+.askedquestion__buttons__answer:hover {
   background: var(--blue);
+  cursor: pointer;
+}
+
+.askedquestion__buttons__check:disabled {
+  pointer-events: none;
+}
+.askedquestion__buttons__check:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 1100px) {

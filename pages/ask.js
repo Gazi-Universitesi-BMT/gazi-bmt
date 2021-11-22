@@ -8,20 +8,26 @@ export default function Ask({ messages }) {
     <Container>
       <div className={classes.ask}>
         <div className={classes.questionamount}>
-          <p>{messages.length} Mesaj.</p>
+          <p>
+            {messages.filter((mess) => mess.answered === false).length} Mesaj.
+          </p>
         </div>
         <ul className={classes.askedquestions}>
-          {messages.map((message) => {
-            return (
-              <li key={message.message}>
-                <AskedQuestion
-                  title={message.title}
-                  email={message.email}
-                  message={message.message}
-                />
-              </li>
-            );
-          })}
+          {messages
+            .filter((mess) => mess.answered === false)
+            .sort((a, b) => a.date > b.date)
+            .map((message) => {
+              return (
+                <li key={message.message}>
+                  <AskedQuestion
+                    id={message._id}
+                    title={message.title}
+                    email={message.email}
+                    message={message.message}
+                  />
+                </li>
+              );
+            })}
         </ul>
       </div>
     </Container>

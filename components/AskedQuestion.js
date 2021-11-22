@@ -1,11 +1,28 @@
 import { useState } from "react";
 import classes from "./styles/askedquestion.module.css";
+import Image from "next/image";
+import { updateMessage } from "../lib/message";
 
-export default function AskedQuestion({ title, email, message }) {
+export default function AskedQuestion({ id, title, email, message }) {
   const [hidden, setHidden] = useState(true);
-  const [mail, setMail] = useState({ email });
+  const [disabled, setDisabled] = useState(true);
+  const [info, setInfo] = useState("");
 
-  let loc = "location.href = `mailto:${email}`;";
+  const handleAnswer = (e) => {
+    e.preventDefault();
+    setInfo("");
+    try {
+      const data = {
+        id: id,
+      };
+
+      updateMessage(data);
+      setInfo("Mesaj az sonra silinecek.");
+    } catch (err) {
+      console.log(err, "Mesaj silinirken bir hata oluştu.");
+      setInfo("Mesaj silinirken bir hata oluştu.");
+    }
+  };
 
   return (
     <div className={classes.askedquestion} onClick={() => setHidden(false)}>
@@ -17,13 +34,36 @@ export default function AskedQuestion({ title, email, message }) {
       ) : (
         <div className={classes.askedquestion__message}>
           <p>{message}</p>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={`mailto:${email}?subject=Gazi Üniversitesi Bilgisayar Mühendisliği Topluluğu`}
-          >
-            <button>Cevapla</button>
-          </a>
+          <div className={classes.askedquestion__buttons}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`mailto:${email}?subject=Gazi Üniversitesi Bilgisayar Mühendisliği Topluluğu`}
+            >
+              <div className={classes.askedquestion__buttons}>
+                <button
+                  onClick={() => setDisabled(false)}
+                  className={classes.askedquestion__buttons__answer}
+                >
+                  Cevapla
+                </button>
+              </div>
+            </a>
+
+            <button
+              disabled={disabled}
+              className={classes.askedquestion__buttons__check}
+              onClick={handleAnswer}
+            >
+              <Image
+                src="/icons/check.svg"
+                width="16px"
+                height="16px"
+                alt="check"
+              />
+            </button>
+            <p>{info}</p>
+          </div>
         </div>
       )}
     </div>

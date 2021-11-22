@@ -13,7 +13,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Home({ events, admins, fileNames }) {
   const [mainImage, setMainImage] = useState(fileNames[0]);
-  const { publicRuntimeConfig } = getConfig();
 
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");

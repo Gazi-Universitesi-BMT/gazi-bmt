@@ -7,5 +7,6 @@ module.exports = {
     GET_MESSAGES: process.env.GET_MESSAGES,
     CREATE_MESSAGE: process.env.CREATE_MESSAGE,
     RECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY,
+    UPDATE_MESSAGE: process.env.UPDATE_MESSAGE,
   },
 };
