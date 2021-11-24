@@ -51,7 +51,7 @@ export default function Home({ events, admins, fileNames }) {
         setSuccess(true);
         setTimeout(() => {
           window.location.reload();
-        }, 2000);
+        }, 3000);
       }
     } catch (error) {
       alert(error?.message || "Something went wrong");

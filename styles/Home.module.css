@@ -4,7 +4,7 @@
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     ". herotext ."
-    "gallery gallery gallery"
+    ". gallery ."
     ". events ."
     "building building building"
     ". community ."
@@ -53,8 +53,8 @@
 
 .gallery__main {
   position: relative;
-  width: 90%;
-  height: 70vh;
+  width: 70%;
+  height: 50vh;
 }
 .gallery__main img {
   border-radius: 12px;
@@ -151,6 +151,7 @@
   border: 2px solid var(--blue2);
   margin: 0.6rem 0rem;
   outline: none;
+  background: var(--flavor);
 }
 
 .inputbox input:focus {
@@ -164,6 +165,8 @@
   border: 2px solid var(--blue2);
   outline: none;
   margin: 0.6rem 0rem;
+  resize: none;
+  background: var(--flavor);
 }
 
 .inputbox textarea:focus {
@@ -206,7 +209,7 @@
 .ask form button {
   font-size: 1.1rem;
   margin: 1rem;
-  background: var(--blue2);
+  background: var(--flavor3);
   color: var(--white);
   border: none;
   outline: none;
@@ -219,7 +222,7 @@
 
 .ask form button:hover {
   cursor: pointer;
-  background: var(--blue);
+  background: var(--flavor2);
 }
 
 .formerror {
