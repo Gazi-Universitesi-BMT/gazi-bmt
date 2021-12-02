@@ -73,6 +73,7 @@ export default function Home({ events, admins, fileNames }) {
         </section>
 
         <section id="gallery" className={classes.gallery}>
+          {/*}
           <div className={classes.gallery__main}>
             <Image
               src={`/images/gallery/${mainImage}`}
@@ -94,6 +95,7 @@ export default function Home({ events, admins, fileNames }) {
               ))}
             </ul>
           </div>
+          {*/}
         </section>
 
         {events.length > 0 && (
