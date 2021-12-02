@@ -10,7 +10,7 @@
     var(--flavor3) 36%,
     var(--flavor4) 100%
   );
-
+  border-radius: 15px;
   color: var(--text);
 }
 
