@@ -1,0 +1,20 @@
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+  grid-template-rows: 10vh 15vh auto;
+  grid-template-areas:
+    ". . ."
+    ". head ."
+    ". blog .";
+}
+
+.blog__head {
+  grid-area: head;
+  font-size: 3rem;
+}
+
+.blog__list {
+  grid-area: blog;
+  list-style: none;
+  padding: none;
+}
