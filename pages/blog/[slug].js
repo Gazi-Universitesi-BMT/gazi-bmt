@@ -3,24 +3,24 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
-import Link from "next/link";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
 import Container from "../../components/Container";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import classes from "./blog.module.css";
+import Image from "next/image";
 
 const MyH1 = (props) => (
   <h1
     className={classes.colorfulheader}
-    style={{ color: "#db7b45" }}
+    style={{ color: "#0096ff" }}
     {...props}
   />
 );
 const MyH2 = (props) => (
   <h2
     className={classes.colorfulheader}
-    style={{ color: "#1d0c35" }}
+    style={{ color: "#0096ff" }}
     {...props}
   />
 );
@@ -35,23 +35,38 @@ const components = {
 export default function PostPage({ source, frontMatter }) {
   return (
     <Container>
-      <div className={classes.bloglayout}>
-        <div className={classes.blogpostheader}>
-          <h1 style={{ color: "#db7b45" }}>{frontMatter.title}</h1>
-          {frontMatter.description && (
-            <p className={classes.blogpostdesc}>{frontMatter.description}</p>
-          )}
-          {frontMatter.date && (
-            <p className={classes.blogdate}>{frontMatter.date}</p>
-          )}
-        </div>
-        <div className={classes.blogcontent}>
-          <MDXRemote {...source} components={components} />
-        </div>
-        <div className={classes.goback}>
-          <Link href="/">
-            <a>👈 Go back home</a>
-          </Link>
+      <div className={classes.bloglayout__wrapper}>
+        <div className={classes.bloglayout}>
+          <div className={classes.bloglayout__header}>
+            <h1 style={{ color: "#0096ff" }}>{frontMatter.title}</h1>
+            {frontMatter.description && (
+              <p className={classes.blogpostdesc}>{frontMatter.description}</p>
+            )}
+            {frontMatter.date && (
+              <p className={classes.blogdate}>{frontMatter.date}</p>
+            )}
+          </div>
+          <div className={classes.bloglayout__content}>
+            <MDXRemote {...source} components={components} />
+          </div>
+
+          <div className={classes.bloglayout__author}>
+            <div className={classes.bloglayout__author__socials}>
+              <a href="/" target="_blank" rel="noreferrer">
+                Linkedin
+              </a>
+              <a href="/" target="_blank" rel="noreferrer">
+                Github
+              </a>
+            </div>
+            <div className={classes.bloglayout__author__image}>
+              <Image
+                src="/images/authors/mert.jpg"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </Container>

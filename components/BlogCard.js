@@ -19,18 +19,18 @@ const BlogCard = ({ post }) => {
           </div>
           <div className={classes.blogcard__content__bottom}>
             <p>{post.data.date}</p>
+            <div className={classes.blogcard__content__bottom__author}>
+              <div className={classes.blogcard__content__bottom__author__image}>
+                <Image
+                  src="/images/authors/mert.jpg"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </Link>
-      <div className={classes.blogcard__content__author}>
-        <div className={classes.blogcard__content__author__image}>
-          <Image
-            src="/images/authors/mert.jpg"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-      </div>
     </article>
   );
 };

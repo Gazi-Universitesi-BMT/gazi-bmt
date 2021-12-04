@@ -159,6 +159,17 @@
   align-items: center;
 }
 
+.external {
+  position: relative;
+  display: inline-block;
+}
+
+.external svg {
+  position: absolute;
+  top: -100%;
+  left: 90%;
+}
+
 /* OTHERS */
 
 .main {

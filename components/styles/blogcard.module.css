@@ -1,16 +1,17 @@
 .blogcard {
   max-width: 60%;
   min-height: 25vh;
-  display: grid;
-  grid-template-columns: 10fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "content author";
-  transition: all 0.4s ease;
+  position: relative;
 }
 
-.blogcard:hover {
-  transition: all 0.4s ease;
-  grid-template-columns: 10fr 2fr;
+.blogcard__content:hover .blogcard__content__title h2 {
+  color: var(--blue);
+  transition: all 0.4s;
+}
+
+.blogcard__content:hover .blogcard__content__bottom p:last-child {
+  color: var(--blue);
+  transition: all 0.4s;
 }
 
 .blogcard__content {
@@ -19,27 +20,42 @@
   justify-content: center;
   min-height: 100%;
   line-height: 9px;
-  grid-area: content;
+}
+
+.blogcard__content:hover {
+  cursor: pointer;
 }
 
 .blogcard__content__title h2 {
   font-size: 1.4rem;
   color: var(--text);
+  transition: all 0.4s;
 }
 
 .blogcard__content__description p {
   font-size: 1.2rem;
 }
 
-.blogcard__content__author {
-  grid-area: author;
+.blogcard__content__bottom {
+  display: flex;
+  justify-content: space-between;
 }
 
-.blogcard__content__author__image {
+.blogcard__content__bottom p:first-child {
+  padding: 0.7rem 0rem;
+}
+
+.blogcard__content__bottom p:last-child {
+  padding: 0.7rem;
+  transition: all 0.4s;
+}
+
+.blogcard__content__bottom__author__image {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 50px;
+  height: 50px;
 }
 
-.blogcard__content__author__image img {
+.blogcard__content__bottom__author__image img {
+  border-radius: 50%;
 }

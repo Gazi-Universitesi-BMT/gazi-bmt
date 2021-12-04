@@ -23,6 +23,7 @@ function NavItem({ href, text }) {
 }
 
 export default function Container(props) {
+  const router = useRouter();
   const { children, ...customMeta } = props;
   const meta = {
     title: "Bilgisayar Mühendisliği Topluluğu, Gazi Üniversitesi.",
@@ -65,23 +66,61 @@ export default function Container(props) {
             <div className={classes.header__navdesktop__logo}>
               <Image src="/icons/logo.svg" layout="fill" objectFit="cover" />
             </div>
-            <ul className={classes.header__navdesktop__nav}>
-              <li>
-                <NavItem href="#" text="Ana Sayfa" />
-              </li>
-              <li>
-                <NavItem href="#gallery" text="Galeri" />
-              </li>
-              <li>
-                <NavItem href="#events" text="Etkinlikler" />
-              </li>
-              <li>
-                <NavItem href="#community" text="Topluluk" />
-              </li>
-              <li>
-                <NavItem href="#ask" text="Bize Sor" />
-              </li>
-            </ul>
+            {router.asPath.includes("/blog") ? (
+              <ul className={classes.header__navdesktop__nav}>
+                <li>
+                  <NavItem href="/" text="Ana Sayfa" />
+                </li>
+                <li className={classes.external}>
+                  <NavItem href="/blog" text="Blog" />
+                  <svg
+                    width="18"
+                    viewBox="0 0 33 33"
+                    fill="var(--text)"
+                    height="18"
+                    preserveAspectRatio="x200Y200 meet"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  >
+                    <path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z" />
+                  </svg>
+                </li>
+              </ul>
+            ) : (
+              <ul className={classes.header__navdesktop__nav}>
+                <li>
+                  <NavItem href="#" text="Ana Sayfa" />
+                </li>
+                <li>
+                  <NavItem href="#gallery" text="Galeri" />
+                </li>
+                <li>
+                  <NavItem href="#events" text="Etkinlikler" />
+                </li>
+                <li>
+                  <NavItem href="#community" text="Topluluk" />
+                </li>
+                <li>
+                  <NavItem href="#ask" text="Bize Sor" />
+                </li>
+                <li className={classes.external}>
+                  <NavItem href="/blog" text="Blog" />
+                  <svg
+                    width="18"
+                    viewBox="0 0 33 33"
+                    fill="var(--text)"
+                    height="18"
+                    preserveAspectRatio="x200Y200 meet"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  >
+                    <path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z" />
+                  </svg>
+                </li>
+              </ul>
+            )}
 
             <div className={classes.socialandtheme}>
               <ul className={classes.socialheader}>
