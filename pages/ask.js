@@ -5,12 +5,11 @@ import classes from "../styles/ask.module.css";
 import { useState } from "react";
 
 export default function Ask({ messages }) {
-  const { publicRuntimeConfig } = getConfig();
   const [authorized, setAuthorized] = useState(false);
   const [pass, setPass] = useState("");
 
   const handleSubmit = () => {
-    if (pass === publicRuntimeConfig.PASS) {
+    if (pass === process.env.PASS) {
       setAuthorized(true);
     } else {
     }
@@ -56,8 +55,7 @@ export default function Ask({ messages }) {
 }
 
 export const getStaticProps = async () => {
-  const { publicRuntimeConfig } = getConfig();
-  const res = await fetch(`${publicRuntimeConfig.GET_MESSAGES}`);
+  const res = await fetch(`${process.env.GET_MESSAGES}`);
   const messages = await res.json();
 
   return {

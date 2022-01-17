@@ -1,6 +1,5 @@
 import Container from "../components/Container";
 import classes from "../styles/Home.module.css";
-import getConfig from "next/config";
 import Event from "../components/Event.js";
 import AdminCard from "../components/AdminCard.js";
 import path from "path";
@@ -205,11 +204,10 @@ export default function Home({ events, admins, fileNames }) {
 }
 
 export const getStaticProps = async () => {
-  const { publicRuntimeConfig } = getConfig();
-  const res = await fetch(`${publicRuntimeConfig.GET_EVENTS}`);
+  const res = await fetch(`${process.env.GET_EVENTS}`);
   const events = await res.json();
 
-  const adminsres = await fetch(`${publicRuntimeConfig.GET_ADMINS}`);
+  const adminsres = await fetch(`${process.env.GET_ADMINS}`);
   const admins = await adminsres.json();
 
   const directory = path.join(process.cwd(), "public", "images", "gallery");
