@@ -9,6 +9,7 @@ import Container from "../../components/Container";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import classes from "./blog.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const MyH1 = (props) => (
   <h1
