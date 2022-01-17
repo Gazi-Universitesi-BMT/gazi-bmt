@@ -153,7 +153,7 @@ export default function Home({ events, admins, fileNames }) {
           <form onSubmit={handleSubmit}>
             <div id={classes.captcha}>
               <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                sitekey={process.env.RECAPTCHA_SITE_KEY}
                 onChange={onReCAPTCHAChange}
               />
             </div>
