@@ -1,5 +1,4 @@
 import Container from "../components/Container";
-import getConfig from "next/config";
 import AskedQuestion from "../components/AskedQuestion";
 import classes from "../styles/ask.module.css";
 import { useState } from "react";
