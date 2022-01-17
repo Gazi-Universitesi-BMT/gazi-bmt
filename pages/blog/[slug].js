@@ -52,20 +52,16 @@ export default function PostPage({ source, frontMatter }) {
 
           <div className={classes.bloglayout__author}>
             <div className={classes.bloglayout__author__socials}>
-              <a
-                href="https://www.linkedin.com/in/mert-u-8248ab135/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Linkedin
-              </a>
-              <a
-                href="https://github.com/Mert18"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Github
-              </a>
+              <Link href="https://www.linkedin.com/in/mert-u-8248ab135/">
+                <a target="_blank" rel="noreferrer">
+                  Linkedin
+                </a>
+              </Link>
+              <Link href="https://github.com/Mert18">
+                <a target="_blank" rel="noreferrer">
+                  Github
+                </a>
+              </Link>
             </div>
             <div className={classes.bloglayout__author__image}>
               <Image
